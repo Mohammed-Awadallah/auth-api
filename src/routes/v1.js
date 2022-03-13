@@ -5,6 +5,7 @@ const dataModules = require('../models');
 const router = express.Router();
 
 router.param('model', (req, res, next) => {
+  console.log(dataModules);
   if (dataModules[req.params.model]) {
     req.model = dataModules[req.params.model];
     next();
